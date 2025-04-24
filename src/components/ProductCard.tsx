@@ -9,20 +9,18 @@ const ProductCard = ({ product, cart, onAddToCart, onRemoveFromCart, onUpdateQua
         }
     }, [cart]);
     return (
-        <div className="border border-gray-300 rounded-md p-4 flex flex-col gap-2 items-start">
-            <h3 className="text-lg font-bold">{product.name}</h3>
-            <p className="text-sm text-gray-500">{product.price}</p>
+        <div className="border bg-white rounded-md p-3 flex flex-col gap-2 items-start min-w-[150px]">
+            <h3 className="text-lg font-semibold text-gray-700">{product.name}</h3>
+            <p className="text-sm font-semibold text-gray-700">₹{product.price}</p>
 
             {cart.find((item) => item.id === product.id && item.quantity > 0) ? (
-                <div className="flex justify-between items-center gap-2">
+                <div className="flex items-center gap-2 w-full ml-auto justify-end">
                     <button className="quantity-button-minus" onClick={() => onUpdateQuantity(product, (cart.find((item) => item.id === product.id)?.quantity || 0) - 1)}>-</button>
-                    <p>{cart.find((item) => item.id === product.id)?.quantity}</p>
+                    <p className="text-md font-semibold text-gray-700">{cart.find((item) => item.id === product.id)?.quantity}</p>
                     <button className="quantity-button-plus" onClick={() => onUpdateQuantity(product, (cart.find((item) => item.id === product.id)?.quantity || 0) + 1)}>+</button>
                 </div>
             ) : (
-                <div className="flex justify-between">
-                    <button className="add-to-cart-button" onClick={() => onAddToCart(product)}>Add to Cart</button>
-                </div>
+                <button className="add-to-cart-button" onClick={() => onAddToCart(product)}>Add to Cart</button>
             )}
         </div>
     )

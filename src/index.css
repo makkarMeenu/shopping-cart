@@ -59,14 +59,17 @@ button:focus-visible {
 }
 
 .add-to-cart-button {
-  background-color: #646cff;
-  padding: 0.4em 0.8em;
+  background-color: #2b7fff;
+  font-size: 1em;
+  font-weight: 500;
+  width: 100%;
+  padding: 0.2em 0.6em;
   border-radius: 0.25em;
   color: #ffffff;
 }
 
 .add-to-cart-button:hover {
-  background-color: #646cff;
+  background-color: #2b7fff;
 }
 
 .quantity-button-minus {
@@ -81,7 +84,7 @@ button:focus-visible {
 }
 
 .quantity-button-plus {
-  background-color: #646cff;
+  background-color: green;
   padding: 0em 0.6em;
   border-radius: 0.25em;
   color: #ffffff;

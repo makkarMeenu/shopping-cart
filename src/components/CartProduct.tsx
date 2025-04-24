@@ -8,14 +8,14 @@ const CartProduct = ({ product, onRemoveFromCart, onUpdateQuantity }: { product:
         }
     }, [product.quantity]);
     return (
-        <div className="border border-gray-300 rounded-md p-4 flex justify-between">
+        <div className="flex justify-between text-left bg-white rounded-md p-3">
             <div>
-                <h2>{product.name}</h2>
-                <p>{product.price} * {product.quantity}</p>
+                <h2 className="text-md font-semibold text-gray-700">{product.name}</h2>
+                <p className="text-sm text-gray-700">₹{product.price} x {product.quantity} = ₹{product.price * product.quantity}</p>
             </div>
             <div className="flex items-center gap-2">
                 <button className="quantity-button-minus" onClick={() => onUpdateQuantity(product, product.quantity - 1)}>-</button>
-                <p>{product.quantity}</p>
+                <p className="text-md font-semibold text-gray-700">{product.quantity}</p>
                 <button className="quantity-button-plus" onClick={() => onUpdateQuantity(product, product.quantity + 1)}>+</button>
             </div>
         </div>

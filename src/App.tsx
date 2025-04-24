@@ -23,20 +23,19 @@ function App() {
 
 
   return (
-    <div>
-      <h1>Shopping Cart</h1>
+    <div className="p-4 bg-gray-200 w-[360px] sm:w-[440px] md:w-[640px] lg:w-[768px] xl:w-[1024px] mx-auto bg-gray-100">
+      <h2 className="text-2xl font-bold text-gray-800">Shopping Cart</h2>
       <div className="flex justify-between flex-col gap-4">
         <div className="flex flex-col gap-4">
-          <div className="flex justify-between flex-col gap-4">
-            <h2 className="text-2xl font-bold text-left">Products</h2>
-            <div className="grid grid-cols-4 gap-4">
+          <div className="flex justify-between flex-col gap-2">
+            <h2 className="text-xl font-bold text-left text-gray-700">Products</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
               {PRODUCTS.map((product) => (
                 <ProductCard key={product.id} product={product} cart={cart} onAddToCart={addToCart} onRemoveFromCart={removeFromCart} onUpdateQuantity={updateQuantity} />
               ))}
             </div>
           </div>
           <CartSummary cart={cart} />
-
           <Cart cart={cart} removeFromCart={removeFromCart} updateQuantity={updateQuantity} />
         </div>
       </div>
