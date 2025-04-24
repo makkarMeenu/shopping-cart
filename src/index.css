@@ -91,7 +91,7 @@ button:focus-visible {
 }
 
 .quantity-button-plus:hover {
-  background-color: #646cff;
+  background-color: green;
 }
 
 @media (prefers-color-scheme: light) {
